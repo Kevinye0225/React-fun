@@ -1,0 +1,15 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "description": "This is react demo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Ye",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
