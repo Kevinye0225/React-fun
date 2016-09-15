@@ -11,6 +11,9 @@ var Comment = React.createClass({
         <h2 className="commentAuthor">
           {this.props.author}
         </h2>
+        <h3 className="commentTo">
+          {this.props.commentTo}
+        </h3>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
     );
@@ -21,7 +24,7 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
       return (
-        <Comment author={comment.author} key={comment.id}>
+        <Comment author={comment.author} key={comment.id} commentTo={comment.commentTo}>
           {comment.text}
         </Comment>
       );
@@ -36,7 +39,7 @@ var CommentList = React.createClass({
 
 var CommentForm = React.createClass({
   getInitialState: function() {
-    return {author: '', text: ''};
+    return {author: '', text: '', commentTo: ''};
   },
   handleAuthorChange: function(e) {
     this.setState({author: e.target.value});
@@ -44,16 +47,20 @@ var CommentForm = React.createClass({
   handleTextChange: function(e) {
     this.setState({text: e.target.value});
   },
+  handleCommentToChange: function(e){
+    this.setState({commentTo: e.target.value});
+  },
   handleSubmit: function(e) {
     e.preventDefault();
     var author = this.state.author.trim();
     var text = this.state.text.trim();
-    if (!text || !author) {
+    var commentTo = this.state.commentTo.trim();
+    if (!text || !author || !commentTo) {
       return;
     }
     // TODO: send request to the server
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({author: '', text: ''});
+    this.props.onCommentSubmit({author: author, text: text, commentTo: commentTo});
+    this.setState({author: '', text: '', commentTo: ''});
   },
   render: function() {
     return (
@@ -69,6 +76,12 @@ var CommentForm = React.createClass({
           placeholder="Say something..."
           value={this.state.text}
           onChange={this.handleTextChange}
+        />
+        <input
+          type="text"
+          placeholder="Say something..."
+          value={this.state.commentTo}
+          onChange={this.handleCommentToChange}
         />
         <input type="submit" value="Post" />
       </form>

@@ -2,21 +2,19 @@
     {
         "id": 1,
         "author": "Pete Hunt",
-        "text": "This is one comment"
+        "text": "This is one comment",
+        "commentTo": "Nobody"
     },
     {
         "id": 2,
         "author": "Jordan Walke",
-        "text": "This is *another* comment"
+        "text": "This is *another* comment",
+        "commentTo": "Pete Hunt"
     },
     {
-        "id": 1473948056072,
-        "author": "kevin",
-        "text": "k"
-    },
-    {
-        "id": 1473948244515,
-        "author": "hello",
-        "text": "world"
+        "id": 3,
+        "author": "Michael Justin",
+        "text": "Thrid Comment",
+        "commentTo": "Jordan Walke"
     }
 ]
