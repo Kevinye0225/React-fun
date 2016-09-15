@@ -1,4 +1,22 @@
-var data = [
-  {id: 1, author: "Pete Hunt", text: "This is one comment"},
-  {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
-];
+[
+    {
+        "id": 1,
+        "author": "Pete Hunt",
+        "text": "This is one comment"
+    },
+    {
+        "id": 2,
+        "author": "Jordan Walke",
+        "text": "This is *another* comment"
+    },
+    {
+        "id": 1473948056072,
+        "author": "kevin",
+        "text": "k"
+    },
+    {
+        "id": 1473948244515,
+        "author": "hello",
+        "text": "world"
+    }
+]
